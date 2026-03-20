@@ -200,7 +200,7 @@ HTML_PAGE = """<!DOCTYPE html>
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Real-time Song Recognizer</title>
+<title>SongSnap — Real-time Song Recognizer</title>
 <style>
   * { margin: 0; padding: 0; box-sizing: border-box; }
   body {
@@ -298,7 +298,7 @@ HTML_PAGE = """<!DOCTYPE html>
 <div class="bg-gradient"></div>
 <div class="container">
   <header>
-    <h1>Real-time Song Recognizer</h1>
+    <h1>SongSnap</h1>
     <div class="status">
       <div class="status-dot"></div>
       <span id="statusText">Listening...</span>
@@ -419,7 +419,7 @@ async def websocket_endpoint(websocket: WebSocket):
 
 if __name__ == "__main__":
     print(flush=True)
-    print("  === Real-time Song Recognizer ===", flush=True)
+    print("  === SongSnap — Real-time Song Recognizer ===", flush=True)
     print("  http://localhost:8000", flush=True)
     print(flush=True)
     uvicorn.run(app, host="0.0.0.0", port=8000, log_level="warning")
