@@ -35,8 +35,8 @@ _loop = None
 # -- Shazam recognition ------------------------------------------------------
 def recognize_from_wav_bytes(wav_bytes: bytes) -> dict | None:
     try:
-        shazam = Shazam(wav_bytes)
-        for offset, result in shazam.recognizeSong():
+        shazam = Shazam(lang="en", region="US", timezone="Europe/Paris")
+        for offset, result in shazam.recognize_song(wav_bytes):
             if result.get("matches"):
                 track = result["track"]
                 title = track.get("title", "Unknown")
@@ -422,4 +422,4 @@ if __name__ == "__main__":
     print("  === SongSnap — Real-time Song Recognizer ===", flush=True)
     print("  http://localhost:8000", flush=True)
     print(flush=True)
-    uvicorn.run(app, host="0.0.0.0", port=8000, log_level="warning")
+    uvicorn.run(app, host="127.0.0.1", port=8000, log_level="warning")

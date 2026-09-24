@@ -5,4 +5,4 @@ echo   === SongSnap — Real-time Song Recognizer ===
 echo   Starting server... Browser will open automatically.
 echo   To stop, click the [Stop Server] button on the website.
 echo.
-python "%~dp0app.py"
+"%~dp0.venv\Scripts\python.exe" "%~dp0app.py"
